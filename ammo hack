@@ -1,0 +1,36 @@
+local LPB = game.Players.LocalPlayer.Backpack
+for _, v in pairs(LPB:GetChildren()) do
+    if v:FindFirstChild("ACS_Settings") then
+        local m = require(v.ACS_Settings)
+        m.AmmoInGun = math.huge
+        m.ShootRate = math.huge
+        m.Bullets = 500
+        m.MaxSpread = 500
+        m.MinSpread = 500
+        m.MinRecoilPower = 0
+        m.MaxRecoilPower = 0
+        m.GunRecoin = 0
+        m.RecoilPowerStepAmount = 0
+        m.IgnoreProtection = true
+        m.BulletPenetration = 10000
+        m.Heavy = true
+        m.FireModes = {
+            ChangeFiremode = true,
+            Semi = false,
+            Burst = false,
+            Auto = true
+        }
+            m["camRecoil"] = {
+            camRecoilUp = {0, 1},
+            camRecoilTilt = {0, 1},
+            camRecoilLeft = {0, 1},
+            camRecoilRight = {0, 1}
+        }
+        m["gunRecoil"] = {
+            gunRecoilUp = {0, 1},
+            gunRecoilTilt = {0, 1},
+            gunRecoilLeft = {0, 1},
+            gunRecoilRight = {0, 1}
+        }
+    end
+end
